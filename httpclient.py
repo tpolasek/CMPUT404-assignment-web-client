@@ -88,7 +88,9 @@ class HTTPClient(object):
     def POST(self, url, args=None):
         sock,path,hostname = self.getInfoUrl(url)
         
-        requstdat = "POST %s HTTP/1.1\r\nHost: %s\r\n" % (path, hostname)
+        requstdat = "POST %s HTTP/1.1\r\n" % (ath
+        requstdat += "Host: %s\r\n" % hostname
+        requstdat += "Content-Type: application/x-www-form-urlencoded\r\n"
         if args is not None:
             postdat = urllib.urlencode(args)
             requstdat += "Content-Length: %s\r\n\r\n" % len(postdat)
