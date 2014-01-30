@@ -49,6 +49,7 @@ class HTTPClient(object):
         for l in lines:
             if len(l) != 0: i += 1
             else: return i
+        return i
     
     def get_headers(self,data):
         i = self.find_index(data.splitlines())
